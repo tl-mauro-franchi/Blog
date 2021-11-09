@@ -1,0 +1,392 @@
+<!DOCTYPE html><html><head>
+      <title>EDAs</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:////Users/mauro.franchi/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.6.1/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="event-driven-architecture-common-issues-and-how-to-solve-them">Event-Driven Architecture: Common issues and how to solve them</h1>
+
+<p>In the last decade we have witnessed an increase demand in real-time data processing systems which has forced companies to adopt a different architectural approach from the old fashioned, but still necessary, <em>Request-Driven</em> Architecture (typically implemented using <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> HTTP or <a href="https://en.wikipedia.org/wiki/Remote_procedure_call">RPC</a> calls).<br>
+Traditionally, these Request-Driven Architecture (RDA) systems have tight coupled components that directly call each other in order to retrieve or manipulate data, or execute commands which are not often compatible with the new modern requirements (such as real-time processing of stream of data and an improved user experience) of distributed microservices systems. The answer to these new consumer needs is given by <em>Event-driven</em> Architectures (EDAs), where consumers can subscribe to an <em>event</em> (or <em>command</em>) in order to receive updates or instructions in an asynchronous way, without needing to poll the server (now producer of the event) for them.</p>
+<p>Are EDAs the silver bullet that can guarantee a real-time communication between different components of the same system (or even between different systems) without any problem? Spoiler alert, of course not.</p>
+<p>As per any other architectural approach, even the event-driven one can bring complexity and issues to the system that need to be addressed at design time in order to avoid future expensive refactoring.</p>
+<p>In this article I will go through common issues I stumbled upon throughout my career when I designed distributed systems based on EDAs. For each issue I will provide a possible architectural solution that could address it and the benefits of choosing that approach.</p>
+<h2 class="mume-header" id="benefits-of-an-eda">Benefits of an EDA</h2>
+
+<p>Before listing the possible issues that you could face while using an EDA approach to design your system, I will first summarise the benefits an EDA brings.</p>
+<h4 class="mume-header" id="fast-development-and-deployment-of-new-service-thanks-to-loose-coupling">Fast development and deployment of new service thanks to loose coupling</h4>
+
+<p>As opposed to the RDA approach, developing and deploying new services for an existing EDA is easier.<br>
+As part of an EDA system, microservices are configured to consume events and perform single operations in total autonomy from other microservices. This independence between components of the same system is also known as <em>loose coupling</em>. The only things that a new service has to be aware of are the name and structure of the events that they need to consume, and where to get them, compared to RDAs, which require services to know the respective API endpoints in order to interact with each other (not to mention also making sure that the network configuration allows them to call one another). Loose coupling enables the EDA systems to <em>fire-and-forget</em> their events, while for RDAs, APIs need to cope with the other APIs availability and response times.<br>
+In an EDA there is only one centralised source for the events called <em>Message Broker</em>. The most popular message brokers are <a href="https://www.rabbitmq.com/">RabbitMQ</a>, <a href="https://kafka.apache.org/">Apache Kafka</a>, <a href="https://aws.amazon.com/sqs/">Amazon SQS</a> and <a href="https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&amp;whats-new-cards.sort-order=desc">Amazon SNS</a>. Message brokers are responsible for acquiring, storing, and delivering events in the form of <em>messages</em> to their consumers.</p>
+<h4 class="mume-header" id="real-time-processing">Real-time processing</h4>
+
+<p>Assuming that the producer of an event and all of its consumers are up and running at the same time, EDAs enable businesses to process streams of data and perform complex operations in <em>real-time</em>. Thereby improving the customer experience by maximizing the responsiveness of the applications involved in the system.</p>
+<h4 class="mume-header" id="fault-tolerance">Fault tolerance</h4>
+
+<p>Loosely coupled components enable a system to be more tolerant to faults. Adding a new feature to a single component, or the system in general, has a lower risk overall and virtually no impact compared to adding it to a monolith or tightly coupled components. Similarly, if one of the components goes down, we can still guarantee the eventual delivery and processing of events. The faulty service can simply self-heal without blocking the rest of the system. Produced events will then be consumed and processed once the service is restored. This can be summarised as increased resiliency.</p>
+<h4 class="mume-header" id="low-latency">Low latency</h4>
+
+<p>As we mentioned above, EDAs reduce the need for point-to-point integration generally used for data sharing. EDA can also reduce the latency of accessing data from external resources by keeping a local read-only copy of that data based on the most recently processed events that will keep the local storage up to date. By using this read-only copy, services that are processing future events will be able to access the data without depending on external resources, thus reducing overall latency of those service.</p>
+<h4 class="mume-header" id="high-independent-scalability">High independent scalability</h4>
+
+<p>The consuming of the same type of event by multiple different consumers who subscribed to it has no impact on the performance of the producer, who only needs to make sure to asynchronously push the event to the broker, which will then guarantee delivery to the subscribers.<br>
+On the other end, the number of subscriptions the consumer has can affect its performance. To solve this issue you could simply either increase the number of instances of the service (<a href="https://en.wikipedia.org/wiki/Scalability#Horizontal_(scale_out)_and_vertical_scaling_(scale_up)">horizontal scaling</a>), or split the service into multiple independent ones.<br>
+This approach of continues processing a stream of data (instead of batching it at regular intervals like it could happen in RDAs), also allows companies to predict the processing time of the events and thus the amount of infrastructure resources needed to operate. This can improve overall cost efficiency by avoiding over-provisioning resources for the system when not necessary. We could then say that EDAs systems use infrastructure resources (network and computational ones) in an efficient way by design.</p>
+<h2 class="mume-header" id="common-issues-and-problems-with-edas">Common issues and problems with EDAs</h2>
+
+<p>Hopefully with the previous section I was able to show you why EDAs for large distributed systems are important and what benefits they can bring. Unfortunately <em>all that glitters is not gold</em> and even EDAs can hide some issues that are better to address at design time. Let&apos;s see together what they are and how we could solve them, or at least contain their impact on the system.</p>
+<h4 class="mume-header" id="message-handler-failure">Message handler failure</h4>
+
+<p>In an EDA system, a message handler is a component that subscribes to a given published event in order to consume and process it. A message handler is just a normal application that can depend on other resources like a database (for example to retrieve and/or update data) or external resources like REST APIs (components in a EDA system can still depend on external APIs). Like many other applications, it can fail while processing the event data (the message) pulled from the message broker (generally a queue).</p>
+<p><em>What happens to the message when its handler fails?<br>
+How can the system recover from that and what are the best options we can implement to solve this issue?</em></p>
+<p>In order to respond to these questions, first we need to identify whether the failure is a definitive one or not. A definitive failure is when the message can&apos;t be processed at all (for example, the message refers to an entity that doesn&apos;t exist in the domain, the message is malformed, etc). A non-definitive failure is when the error can be due to a temporary network issue like latency (or timeout) while connecting to a database or an external API.<br>
+Once we have identified the issue, we have to decide how to address it. Normally the handler should always have an internal retry or back-off policy for most network issues. Once the number of application retries are exhausted we can then try to send the message back to the queue for a predefined number of times before its retention period expires.</p>
+<blockquote>
+<p><em>The retention period for an event defines the time a message is stored on the message broker before its discarded</em></p>
+</blockquote>
+<p>In both cases, when it is clear that nothing can be done (for example the database or the external API are down and after X attempts the message could not be processed), the message should be pushed to a <em>dead letter queue</em>.</p>
+<blockquote>
+<p><em>In message queuing the dead letter queue is a service implementation to store messages that meet one or more of the following criteria: Message that is sent to a queue that does not exist. Queue length limit exceeded. Message length limit exceeded. Message is rejected by another queue exchange</em> (<a href="https://en.wikipedia.org/wiki/Dead_letter_queue">Wikipedia</a>)</p>
+</blockquote>
+<p>Once the message is sent to the dead queue, it cannot be consumed unless it gets manually resent to the original queue. It is important to use dead queue letters to avoid losing unprocessed messages due to human errors, like a bug in the code or in the network configuration, and to allow investigation of malformed messages as well.</p>
+<h4 class="mume-header" id="message-ordering-and-duplicate-messages">Message ordering and duplicate messages</h4>
+
+<p>Let&apos;s consider the following example: you are building a large distributed account transactions tracker system for a bank and you need to guarantee that the transactions are processed in the same exact order they are executed. What we need in this case is either to design our own solution to achieve that or to base our solution on out-of the box first-in-first-out (FIFO) queues provided by the chosen message broker.<br>
+It could happen that the standard queues provided by some message brokers are not designed to guarantee the a message is always processed after the previous one. For example, <a href="https://aws.amazon.com/sqs/faqs/">states</a> that:</p>
+<blockquote>
+<p><em>Amazon SQS standard queues (the new name for existing queues) remain unchanged, and you can still create standard queues. These queues continue to provide the highest scalability and throughput; however, you will not get ordering guarantees and duplicates might occur.</em></p>
+</blockquote>
+<p>On the other hand, most of the brokers also provide a guide to migrate the non-ordered queues to a type of queue that guarantees the messages are processed in the desired way (see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-moving.html">this</a> about AWS for FIFO queues).</p>
+<p>So, whenever we need to design system that requires that every single event is processed in the same order as they occur, and possibly only once (in the example, for instance, you may not wish to process a transaction related to a payment more than once), it is better to choose the appropriate queue (or even message broker) that guarantees that.</p>
+<p>Regarding duplicate messages, in case the <em>exactly-once processing</em> feature for queues is not provided by the selected broker, another solution I implement in the past (before AWS started providing these kind of queues in <a href="https://aws.amazon.com/about-aws/whats-new/2016/11/amazon-sqs-introduces-fifo-queues-with-exactly-once-processing-and-lower-prices-for-standard-queues">2016</a>) was to store the hash of the key information contained in the message payload. Sometimes the same event could be published multiple times with different IDs so storing just the ID would have been inadequate. For example, considering our account transaction tracker system, a possible set of key information from the transaction event could be the coordinates of the transaction, the amount, and the execution time.<br>
+This would make our consumers of the event known as <a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/IdempotentReceiver.html">Idempotent receivers</a>.</p>
+<h4 class="mume-header" id="big-messages">Big messages</h4>
+
+<p>When designing an EDA system, one of the aspects to take in account is related to how big the messages can be. For instance, if we imagine that we have to design a food ordering system, we need to analyse whether we want to limit the number of basket items we want the customer to be allowed to put in their order or not, and how to represent them inside of an <em>&quot;Order Created&quot;</em> event that communicates to the rest of the platform that an order has been placed.</p>
+<p>We have now 4 different options before us in order to solve this issue.</p>
+<ol>
+<li>
+<p><strong>Select a message broker that allows us to send and receive messages big enough</strong> to cope even with very hungry customers:</p>
+<ul>
+<li>AWS SQS/SNS message size limit is set to <a href="https://aws.amazon.com/about-aws/whats-new/2013/06/18/amazon-sqs-announces-256KB-large-payloads">256kb</a>;</li>
+<li>RabbitMQ allows us to send a message payload of up to <a href="https://github.com/rabbitmq/rabbitmq-common/blob/master/include/rabbit.hrl#L250-L253">512 MB</a>. Obviously this is not recommended but it is still good that we have virtually no limits with this broker;</li>
+<li>Kafka limits the size of its messages to <a href="https://kafka.apache.org/documentation/#brokerconfigs_message.max.bytes">1MB</a>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Design the message body to contain as little information as possible to reduce its size</strong>. For example, the order details could only contain the IDs of the items and sub items (like extras for each item on a menu) that the customer has selected, rather than including every single piece of information (name, cost, description, etc) that could be retrieved by invoking another API or from a local projection (database) of the basket domain. The latter would make the solution more complex and the producer of our Order Created message would be tightly coupled with other components and/or resources. It could still be a valid solution though. It is up to you to evaluate the correct trade-off between reducing the message size and retrieving the order data from other resources.</p>
+</li>
+<li>
+<p><strong>Offload the actual payload of the message to a different data storage</strong> and link it in the body of the message along with enough metadata fields that could be used by the consumers of the event to process it without accessing the actual payload (as not every consumer of the event may need access to the list of items that are part of the order). For example, a typical set of metadata fields for an order could be:</p>
+<pre data-role="codeBlock" data-info="json" class="language-json"><span class="token punctuation">{</span>
+ <span class="token property">&quot;Id&quot;</span><span class="token operator">:</span> <span class="token number">12345</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;CustomerData&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span> .. <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;RestaurantData&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span> .. <span class="token punctuation">}</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;OrderTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;01/01/2000&quot;</span><span class="token punctuation">,</span>
+ <span class="token property">&quot;Total&quot;</span><span class="token operator">:</span> <span class="token number">50.0</span>
+ <span class="token property">&quot;OrderPayload&quot;</span><span class="token operator">:</span><span class="token string">&quot;&lt;link to external storage&gt;&quot;</span>
+<span class="token punctuation">}</span>
+</pre><p>Sometimes it could be possible that the SDK (or <a href="https://docs.aws.amazon.com/sns/latest/dg/large-message-payloads.html">extensions of it</a>) of the selected message broker has implemented a logic that, when enabled and the message we want to publish exceeds the size limits, it automatically stores the payload to an external configurable storage (for AWS we could generally pick up <a href="https://aws.amazon.com/s3/?nc2=h_ql_prod_fs_s3">S3</a>).</p>
+</li>
+<li>
+<p><strong>Split the message into multiple processable chunks</strong> (for example one for each order item) and let the consumers of them process each of them until the original message is recomposed. This solution can be implemented using a <a href="https://www.enterpriseintegrationpatterns.com/Sequencer.html">splitter</a> and it could be tricky to implement given that the consumer of the partitioned message has to:</p>
+<ul>
+<li>keep track of the chucks it received and processed;</li>
+<li>store them somewhere in order to make sure that every instance of the service is reassemble the original message once the last sub-message is handled;</li>
+<li>maybe process the recomposed message in case an even has to be published to state that the processing is completed.</li>
+</ul>
+<p>There are also some other pitfalls to this approach that have made me avoid it in the past, especially if you need to execute something when every single individual message is received. For example:<br>
+<em>What happens when one or multiple chucks are lost?<br>
+How can we retrieve them? What if the last piece of the message takes too long to arrive and the message cannot be processed anymore?</em></p>
+</li>
+</ol>
+<p>All the above solutions are generally good solutions to consider in order to address a large message problem but, like the previous exposed problems, they have to be taken in account while designing the system otherwise the costs involved in migrating to the new solution could be huge. Let&apos;s consider for example options 2 and 3. They both consist in changing the message structure. If we have already consumers of the message we need to create a new version (i.e. <em>Order Created V2</em>) and keep publishing both V1 and V2 at the same time until all the consumers have finally migrated away from the original and faulty version.<br>
+In my experience this can take a very long time, especially in big enterprises where teams have different schedules and deadlines. Also sometimes it is almost impossible to get rid of the legacy messages given that some of the consumers may never be updated. This results in an increase in infrastructure costs (as we must publish multiple version of the same message when we could actually publish just one), maintenance, and risk that the publisher will fail to publish all the versions of the message.</p>
+<h4 class="mume-header" id="transactional-operations-how-to-coordinate-different-actors-involved">Transactional operations: how to coordinate different actors involved?</h4>
+
+<p>In the previous example, when an order is created we need to store it to the database before communicating to the rest of the platform what the order is. In the event of a failure of communication with the message broker, our system has 2 options:</p>
+<ul>
+<li>fail the process by rolling back the operation on the database (we would like to avoid it);</li>
+<li>guarantee the atomicity of the operation by increasing the reliability of our system.</li>
+</ul>
+<p>The <em>Outbox Pattern</em> (based on the <a href="https://www.enterpriseintegrationpatterns.com/patterns/messaging/GuaranteedMessaging.html">Guaranteed Delivery</a> pattern) can help us to achieve the second point.<br>
+In the real (but still virtual) world, every time we send an email it normally goes to an <em>outbox</em> before it is marked as <em>sent</em> when the email is processed. The same approach can be applied to our EDA.<br>
+When saving the order information to our database, as part of the same transaction we simply have to store to an outbox table, the information we want to communicate to the rest of the platform. This data will them be polled by the <em>Outbox processor</em> which will publish our <em>Order Created</em> message. Every time the processor publishes a message, it will mark the related ourbox record as done in order not to reprocessed it next time.<br>
+This pattern will guarantee to us that the message will always be published at least once as multiple instances of the outbox processor could handle the same unprocessed record at the same time. Of course we could always implement a mechanism to reduce the risk of this event occurring.</p>
+<h2 class="mume-header" id="conclusion">Conclusion</h2>
+
+<p>In this article I have presented why Event-Driven Architectures are important while designing distributed system, and what benefits they can bring. I also went through the list of possible issues and pitfalls that an EDA can bring to the system if not addressed immediately at design time. For each of these problems I gave a set of possible solutions based on literature and on my own experience with such systems.<br>
+No solution is bullet proof, but we can always try to reduce the damage by preventing common issues that others before us faced and solved.</p>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
