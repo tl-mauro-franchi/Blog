@@ -262,7 +262,7 @@ pre[data-line] .line-highlight[data-end]:after {
     <body for="html-export">
       <div class="mume markdown-preview  ">
       <h1 class="mume-header" id="event-driven-architecture-common-issues-and-how-to-solve-them">Event-Driven Architecture: Common issues and how to solve them</h1>
-      <span style="color: #969896;"><em>By Mauro Franchi</em></span><br/>
+      <div style="color: #969896;"><em>By Mauro Franchi</em></div><br/>
 <p>In the last decade we have witnessed an increase demand in real-time data processing systems which has forced companies to adopt a different architectural approach from the old fashioned, but still necessary, <em>Request-Driven</em> Architecture (typically implemented using <a href="https://en.wikipedia.org/wiki/Representational_state_transfer">REST</a> HTTP or <a href="https://en.wikipedia.org/wiki/Remote_procedure_call">RPC</a> calls).<br>
 Traditionally, these Request-Driven Architecture (RDA) systems have tight coupled components that directly call each other in order to retrieve or manipulate data, or execute commands which are not often compatible with the new modern requirements (such as real-time processing of stream of data) of distributed microservices systems. The answer to these new consumer needs is given by <em>Event-driven</em> Architectures (EDAs), where consumers can subscribe to an <em>event</em> (or <em>command</em>) in order to receive updates or instructions in an asynchronous way, without needing to poll the server (now producer of the event) for them.</p>
 <p>Are EDAs the silver bullet that can guarantee a real-time communication between different components of the same system (or even between different systems) without any problem? Spoiler alert, of course not.</p>
